@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="JavaScript">
+        function setCookie(name, value, expiredays) {
+            var date = new Date();
+            date.setDate(date.getDate() + expiredays);
+            document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
+        }
+    
+        function closePopup() {
+            if (document.getElementById("check").value) {
+                setCookie("popupYN", "N", 1);
+                self.close();
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <input type="checkbox" id="check" onclick="closePopup();">
+        <br />
+    <b>하루에 한번만 보기</b> 
+    </body>
+
+    
+</html>
